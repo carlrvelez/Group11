@@ -150,4 +150,4 @@ The Geek Text API provides RESTful endpoints for user profile and credit card ma
    mvn spring-boot:run
 
 ### Usage
-With the API running, you can make requests to the endpoints as listed above. You can use tools like Postman to interact with the API and test each endpoint.
+With the API running, you can make requests to the endpoints as listed above. You can use tools like Postman to interact with the API and test each endpoint..
