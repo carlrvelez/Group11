@@ -1,11 +1,13 @@
 package com.example.books.Book;
-//import javax.persistence.*;
+
+import com.example.books.Author.author;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 import jakarta.persistence.Entity;
+
 
 @Entity
 @Table(name = "books")
@@ -16,6 +18,7 @@ public class book {
     private String authorsFirstName;
     @Column
     private String authorsLastName;
+
     @Id
     //@JsonProperty
     private String ISBN;
@@ -32,10 +35,14 @@ public class book {
     @Column
     private double price;
 
+
+
+
     public book(String title, String authorFirst, String authorLast, String ISBN, String descrip, String gen, String pub, int year, double price){
         this.title = title;
         authorsFirstName = authorFirst;
         authorsLastName = authorLast;
+
         this.ISBN = ISBN;
         description = descrip;
         genre = gen;
@@ -109,6 +116,8 @@ public class book {
     public void setDescription(String description) {
         this.description = description;
     }
+
+
 
     public void setGenre(String genre) {
         this.genre = genre;

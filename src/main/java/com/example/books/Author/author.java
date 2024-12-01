@@ -5,13 +5,12 @@ import java.util.ArrayList;
 import com.example.books.Book.book;
 import jakarta.persistence.*;
 
-//import javax.persistence.*;
 
 @Entity
 @Table(name = "authors")
 public class author {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int authorID;
     @Column
     private String firstName;
@@ -22,12 +21,7 @@ public class author {
     @Column
     private String publisher;
 
-   @OneToMany
-    @JoinColumn(name = "books")
-    private List<book> authoredBooks;
 
-    //List of ISBN's that can then get a list of books?
-    //private List<String> authoredBooks = new ArrayList<String>();
 
     public author(String first, String last, String pub, String bio){
 
@@ -41,13 +35,6 @@ public class author {
 
     }
 
-   /* List<String> getAuthoredBooks(){
-        return authoredBooks;
-    }*/
-
-    public int getAuthorID() {
-        return authorID;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -77,18 +64,6 @@ public class author {
         this.biography = biography;
     }
 
-   public void setAuthoredBooks(List<book> authoredBooks) {
-        this.authoredBooks = authoredBooks;
-    }
-
-    public void addBook(book b){
-        authoredBooks.add(b);
-    }
-
-    public List<book> getAuthoredBooks() {
-        return authoredBooks;
-    }
-
     public void setPublisher(String publisher) {
         this.publisher = publisher;
     }
@@ -96,12 +71,10 @@ public class author {
     @Override
     public String toString() {
         return "author{" +
-                "authorID=" + authorID +
-                ", firstName='" + firstName + '\'' +
+                "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", biography='" + biography + '\'' +
                 ", publisher='" + publisher + '\'' +
-                ", authoredBooks=" + authoredBooks +
                 '}';
     }
 }

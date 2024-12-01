@@ -26,12 +26,9 @@ public class authorController {
         return auRep.save(a);
     }
 
-    @PostMapping("/addBook/{id}")
+  /*  @PostMapping("/addBook/{id}")
     public author addBookToAuthor(@RequestBody book b, @PathVariable Integer id){
-      /*  Optional<author> a = auRep.findById(id);
-        if(a.isEmpty()){
-            throw new authorNotFoundException();
-        }*/
+
         Optional<author> a = Optional.ofNullable(getBooks(id));
         a.get().addBook(b);
         return a.get();
@@ -44,7 +41,7 @@ public class authorController {
             throw new authorNotFoundException();
         }
         return a.get();
-    }
+    }*/
 
     @GetMapping("/all")
     public List<author> getAllAuthors(){

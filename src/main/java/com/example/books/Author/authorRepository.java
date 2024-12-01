@@ -16,17 +16,3 @@ import java.util.Optional;
 public interface authorRepository extends JpaRepository<author, Integer>{
 
 }
-/*public class authorRepository extends JpaRepository<author, Long> {
-
-    private List<author> Authors = new ArrayList<author>();
-
-   void addAuthor(author a){
-       Authors.add(a);
-   }
-
-    @PostConstruct
-    private void init(){
-        Authors.add(new author("first", "last", "pub", "bio"));
-    }
-}
-*/
